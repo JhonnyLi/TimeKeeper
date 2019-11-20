@@ -1,0 +1,25 @@
+﻿@using TimeKeeper.Web.Models.ViewModels;
+@model TimeKeeperViewModel
+@{
+    var test = Model;
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@{
+
+    //foreach(var company in Model)
+    //{
+    <div class="form-group">
+        @Html.LabelFor(x => x.VadIds, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.DropDownListFor(x => Model.CustomerName, new SelectList(Model.VadIds, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "Country" })
+            @*@Html.DropDownListFor(x=> "Tjena", Model, htmlAttributes: new { @class = "form-control", id = "Country" })*@
+            @Html.ValidationMessageFor(x => x.CustomerName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @*}*@
+}
+
+@Html.ActionLink("Logga ut", "Logout", "Account")

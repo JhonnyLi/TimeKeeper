@@ -1,0 +1,18 @@
+﻿body {
+    background-color:darkgray;
+}
+
+.form-label{
+    width:40%;
+    display:inline-block;
+    text-align:right;
+}
+
+.form-input {
+    width: 59%;
+    display: inline-block;
+}
+
+.form-input input{
+    width:100%;
+}

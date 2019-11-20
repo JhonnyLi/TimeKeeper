@@ -1,0 +1,33 @@
+﻿@model TimeKeeper.Web.Models.ViewModels.LoginViewModel
+@{
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Logga in!</div>
+            @using (Html.BeginForm("Login", "Account"))
+            {
+                @Html.AntiForgeryToken()
+        <div style="width:50%; margin: 0 auto;">
+            <div>
+                <div class="form-label">@Html.LabelFor(model => model.Email, "E-mail")</div>
+                <div class="form-input">@Html.TextBoxFor(model => model.Email, Model.Email)</div>
+            </div>
+            <div>
+                <div class="form-label">@Html.LabelFor(model => model.Password, "Lösenord")</div>
+                <div class="form-input">@Html.PasswordFor(model => model.Password, Model.Password)</div>
+            </div>
+            <div>@Html.ValidationMessageFor(e => e.Email)</div>
+            <div>@Html.ValidationMessageFor(e => e.Password)</div>
+            <div>@Html.ValidationSummary()</div>
+            <button type="submit">Logga in</button>
+        </div>
+            }
+            @*@Html.ActionLink("Logga in", "Index", "Account", new { id = "login_button" }, new { @class = "btn btn-primary btn-xl text-uppercase js-scroll-trigger" })*@
+        </div>
+    </div>
+</header>
+
